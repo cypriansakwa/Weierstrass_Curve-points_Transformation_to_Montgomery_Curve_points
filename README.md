@@ -58,4 +58,3 @@ To use the transformation, instantiate the parameters of your Weierstrass curve 
         >None => println!("No valid transformation found."),
     >}
 >}
-
