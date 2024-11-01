@@ -87,25 +87,25 @@ fn transform_to_montgomery(
     b: &BigInt,
     p: &BigInt,
 ) -> Option<(BigInt, BigInt, BigInt, BigInt)> {
-    // Find a root z0 of the polynomial z^3 + az + b in the field F_p
+    //Find a root z0 of the polynomial z^3 + az + b in the field F_p
     let mut rng = rand::thread_rng();
     let z0 = loop {
         let candidate = rng.gen_bigint_range(&BigInt::zero(), p);
         if (&candidate.pow(3) + a * &candidate + b).mod_floor(p).is_zero() {
-            //println!("Found z0: {}", candidate); // Debug print
+            println!("Found z0: {}", candidate); // Debug print
             break candidate;
         }
     };
 
     // Compute s = (sqrt(3 * z0^2 + a))^{-1} modulo p
     let s_squared = (BigInt::from(3) * &z0 * &z0 + a).mod_floor(p);
-    //println!("s_squared: {}", s_squared); // Debug print
+    println!("s_squared: {}", s_squared); // Debug print
 
     let s = mod_sqrt(&s_squared, p)?;
-    //println!("s: {}", s); // Debug print
+    println!("s: {}", s); // Debug print
 
     let s_inv = mod_inverse(&s, p)?;
-    //println!("s_inv: {}", s_inv); // Debug print
+    println!("s_inv: {}", s_inv); // Debug print
 
     // Compute the new parameters a and b
     let a_montgomery = (BigInt::from(3) * &z0 * &s_inv).mod_floor(p);
