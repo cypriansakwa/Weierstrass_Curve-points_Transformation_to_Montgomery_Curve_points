@@ -40,21 +40,27 @@ $a_{\text{montgomery}}$ and $b_{\text{montgomery}}$.
 To use the transformation, instantiate the parameters of your Weierstrass curve and the point you wish to transform. Below is an example of how to use the transformation function:
 >```
 >fn main() {
- >   // Example values for a Weierstrass curve over F_p
-  >  let a = BigInt::from_str("8").unwrap();
-   > let b = BigInt::from_str("2").unwrap();
-    >let p = BigInt::from_str("17").unwrap(); // Example prime modulus
-
-    >let x = BigInt::from_str("14").unwrap();
-    >let y = BigInt::from_str("6").unwrap();
->
- >   match transform_to_montgomery(&x, &y, &a, &b, &p) {
-  >      Some((x_montgomery, y_montgomery, a_montgomery, b_montgomery)) => {
-   >         println!("x_montgomery: {}", x_montgomery);
-    >        println!("y_montgomery: {}", y_montgomery);
-     >       println!("a_montgomery: {}", a_montgomery);
-      >      println!("b_montgomery: {}", b_montgomery);
-       > }
-        >None => println!("No valid transformation found."),
-    >}
+>   // Example values for a Weierstrass curve over F_p
+>  let a = BigInt::from_str("8").unwrap();
+> let b = BigInt::from_str("2").unwrap();
+>let p = BigInt::from_str("17").unwrap(); // Example prime modulus
+>let x = BigInt::from_str("14").unwrap();
+>let y = BigInt::from_str("6").unwrap();
+>   match transform_to_montgomery(&x, &y, &a, &b, &p) {
+>      Some((x_montgomery, y_montgomery, a_montgomery, b_montgomery)) => {
+>         println!("x_montgomery: {}", x_montgomery);
+>        println!("y_montgomery: {}", y_montgomery);
+>       println!("a_montgomery: {}", a_montgomery);
+>      println!("b_montgomery: {}", b_montgomery);
+> }
+>None => println!("No valid transformation found."),
 >}
+>}
+## Installation
+
+To get started, ensure you have [Rust](https://www.rust-lang.org/tools/install) installed on your machine. You can then clone the repository and build the project:
+
+  >```
+  > git clone https://github.com/cypriansakwa/Weierstrass_Curve-points_to_Montgomery_Curve_points.git
+   >cd Weierstrass_Curve-points_to_Montgomery_Curve_points
+   >cargo build
