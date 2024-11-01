@@ -1,0 +1,10 @@
+[package]
+name = "Weierstrass_Curve-points_to_Montgomery_Curve_points"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rand = "0.8" # Make sure to include the latest version of the rand crate
+num-bigint = { version = "0.4.6", features = ["rand"] }
+num-traits = "0.2" # You already have this, but ensure it remains
+num-integer = "0.1" # You already have this, but ensure it remains
