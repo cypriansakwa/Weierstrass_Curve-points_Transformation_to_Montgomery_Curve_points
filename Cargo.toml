@@ -1,5 +1,5 @@
 [package]
-name = "Weierstrass_Curve-points_to_Montgomery_Curve_points"
+name = "Weierstrass_Curve-points_Transformation_to_Montgomery_Curve_points"
 version = "0.1.0"
 edition = "2021"
 
