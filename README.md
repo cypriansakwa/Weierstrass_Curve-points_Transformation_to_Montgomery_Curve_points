@@ -1,4 +1,4 @@
-# Weierstrass to Montgomery Curve Transformation
+# Weierstrass_Curve-points_Transformation_to_Montgomery_Curve_points
 
 This Rust project implements a transformation from Weierstrass curves to Montgomery curves over a finite field. The code leverages the `num-bigint`, `num-integer`, `num-traits`, and `rand` crates for mathematical operations and random number generation.
 
